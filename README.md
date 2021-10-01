@@ -1,4 +1,4 @@
-# Welcome to mvp lil' beasts web
+# Welcome to lil' beasts web(mvp)
 staging: https://lilbeastspetshelter.netlify.app/
 
 
