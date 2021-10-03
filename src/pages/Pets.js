@@ -6,17 +6,13 @@ import {Pagination, Stack, Typography} from '@mui/material';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  width: 100%;
-  @media (max-width: 420px) {
-  padding: 0;
-  margin: 0;
+  width: 100vw;
+  height: 100%;
+  @media (max-width: 426px) {
+    width: 100%;
+    heigth: 100%;
 }
-@media (min-width: 1440px) {
-  margin: 7rem 0;
-  padding: 7rem 0;
-  }
 `
-
 const PetsContainer = styled.div`
   display: inline-block;
   border-radius: 3px;
@@ -25,8 +21,9 @@ const PetsContainer = styled.div`
   color: white;
 `
 const ContainerPagination = styled.div`
-width: 100%;
+max-width: 300px;
 color: white;
+background-color: white;
 display: grid;
 justify-content: 'center';
 `

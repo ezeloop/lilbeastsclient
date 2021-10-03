@@ -10,7 +10,7 @@ import LoginIcon from '@mui/icons-material/Login';
 import { useSelector } from 'react-redux'
 
 const Container = styled.div`
- width: 100%;
+ width: 100vw;
 
   @media (min-width: 425px) {
   width: 100%;
@@ -33,14 +33,6 @@ const ContainerData = styled.div`
 const ContainerLinks = styled.div`
  width: 100%;
 
-@media (min-width: 425px) {
-  display: grid;
-  justify-content: space-between;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  justify-content: center;
-  align-items: center;
-}
 `
 const Header = () => {
   const auth = useSelector((state) => state.auth.autenticated)

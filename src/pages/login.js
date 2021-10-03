@@ -17,19 +17,21 @@ import {useFormik} from 'formik';
 import {loginAction} from '../redux/actions/login';
 import {useDispatch, useSelector} from 'react-redux';
 import BasicAlerts from '../components/Alert';
+import styled from 'styled-components';
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Lil' Beasts Animal Shelter
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+const ContainerDiv = styled.div`
+  max-width: 500px;
+  height: 100vh;
+  background-color: white;
+  @media (min-width: 420px) {
+  padding: 0;
+  margin: 0;
+  }
+  @media (min-width: 1440px) {
+  margin: 0rem;
+  padding: 2rem;
+  }
+`
 
 const theme = createTheme();
 
@@ -54,6 +56,7 @@ export default function SignIn() {
 
   return (
     <ThemeProvider theme={theme}>
+    <ContainerDiv>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -137,8 +140,8 @@ export default function SignIn() {
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
+      </ContainerDiv>
     </ThemeProvider>
   );
 }

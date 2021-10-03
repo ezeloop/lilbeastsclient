@@ -1,18 +1,17 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { getPetsPaginationAction } from '../redux/actions/pets';
-import Avatar from '../components/Avatar'
 import styled from 'styled-components'
 
 const Container = styled.div`
+  width: 100vw;
+  height: 100vh;
+  @media (max-width: 426px) {
   width: 100%;
-  @media (max-width: 420px) {
-  padding: 0;
-  margin: 0;
   }
   @media (min-width: 1440px) {
-  margin: 1rem;
-  padding: 1rem;
+  margin: 0rem;
+  padding: 2rem;
   }
 `
 
@@ -30,8 +29,7 @@ const PrincipalText = styled.div`
 }
 `
 const ContainerImages = styled.div`
-display: inline-block;
-  border-radius: 3px;
+  display: inline-block;
   width: 100%;
   background: transparent;
   color: white;
@@ -44,16 +42,16 @@ const ContainerImageText = styled.div`
     grid-template-rows: 1fr;
     justify-content: center;
     align-items: center;
-    margin: 2rem;
+    margin-top: 2rem;
 
-  @media (max-width: 420px) {
+  @media (max-width: 426px) {
+    width: 100%;
     heigth: 100%;
     grid-template-columns: 1fr;
     grid-template-rows: 2fr 1fr;
-    margin: 0;
+    padding-top: 20px;
 }
 
-}
 `
 
 
@@ -66,7 +64,6 @@ const Home = () => {
     //eslint-disable-next-line
   }, [])
 
-  const petsAvailable = useSelector((state) => state.pets.petsforpage);
   const loading = useSelector((state) => state.pets.loading)
 
   return (
@@ -89,16 +86,7 @@ const Home = () => {
             <p>in your local animal shelters or rescues right now who would love to join your family.</p>
           </PrincipalText>
           <ContainerImageText>
-            <ContainerImages>
-              {petsAvailable.length === 0 ? <p>There is no available pets :C</p> : (
-                petsAvailable.map(petAvailable => (
-                  <Avatar
-                    key={petAvailable._id}
-                    data={petAvailable}
-                  />
-                ))
-              )}
-            </ContainerImages>
+         
             <ContainerImages>
               <p>For over 150 years, the ASPCA has worked tirelessly to put an end to animal abuse and neglect. We are a national leader in animal rescue, protection and placement, and your tax-deductible donation will help fight cruelty and make a life-changing difference for animals across America. Thank you for making the ASPCA and the animals we serve a part of your life.</p>
             </ContainerImages>
