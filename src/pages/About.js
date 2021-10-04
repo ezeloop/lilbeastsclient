@@ -11,6 +11,8 @@ const About = () => {
   margin: 2rem;
   background: transparent;
   box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
   color: white;
   border: 4px solid white;
   height: 100%;
@@ -20,8 +22,13 @@ const About = () => {
   height: 100vh;
   }
   @media (min-width: 1440px) {
-  margin: 13rem 9rem;
-  padding: 13rem 9rem;
+  margin: 3rem 9rem;
+  padding: 3rem 9rem;
+  }
+
+  @media (max-width: 1440px) {
+  margin: 6rem 9rem;
+  padding: 6rem 9rem;
   }
 }
 `

@@ -40,8 +40,8 @@ const Header = () => {
   return (
     <Container>
       <Box >
-        <AppBar position="static">
-          <Toolbar style={{ padding: 0 }}>
+        <AppBar  position="static">
+          <Toolbar  style={{ padding: 0 }}>
             <ContainerData>
               <IconButton
                 size="large"
