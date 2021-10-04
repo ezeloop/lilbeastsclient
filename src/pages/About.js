@@ -17,36 +17,69 @@ const About = () => {
   border: 4px solid white;
   height: 100%;
   @media (max-width: 768px) {
-  width: 200px;
+  width: 300px;
+  font-size: 16px;
   padding: 0;
-  height: 100vh;
+  margin: 0;
+  border-radius: none;
+  border: none;
+  box-shadow: none;
   }
   @media (min-width: 1440px) {
   margin: 3rem 9rem;
   padding: 3rem 9rem;
   }
 
-  @media (max-width: 1440px) {
-  margin: 6rem 9rem;
-  padding: 6rem 9rem;
-  }
+  
 }
+`
+
+const Title = styled.h1 `
+  background-color: #bfe9ff;
+  border-radius: 30px;
+
+  @media (max-width: 320px) {
+  width: 250px;
+  font-size: 2rem;
+  padding: 0;
+  margin: 0;
+  }
+`
+
+const TextContainer = styled.div `
+  width: 100%;
+  background-color: #bfe9ff;
+  border-radius: 30px;
+  padding: 0.5rem;
+
+  @media (max-width: 320px) {
+  width: 250px;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  }
+`
+
+const Text = styled.p `
+padding: 2rem;
+color: black;
+text-align: justify;
 `
 
   return (
     <PrincipalText>
-      <h2>Monetary donation</h2>
+      <Title>Monetary donation</Title>
       <IconButton
         size="large"
         edge="start"
         style={{ color: '#404969' }}
         aria-label="menu"
       >
-        <MonetizationOnIcon />
       </IconButton>
-      <p>Financial contributions are always needed to support the best care possible to the animals in the shelter and in the community. Our goal is to help keep pets in their homes or to find them new permanent forever homes. Your support will  also help Austin maintain its status as the largest no-kill city in the country. Donated funds are used to treat serious injuries, provide dog houses and fencing  assistance, emergency response and basic pet and health care items for low-income pet owners etc.  To have the greatest impact, please give a recurring donation. To make a tax deductible gift click the DONATE button below.
-        Animal Services has numerous programs and partnerships designed to help pets in the shelter, in the community, and at home. Your donation will be used to provide these pets the extra attention and care they need and deserve.</p>
-
+      <TextContainer>
+      <Text>Financial contributions are always needed to support the best care possible to the animals in the shelter and in the community. Our goal is to help keep pets in their homes or to find them new permanent forever homes. Your support will  also help Austin maintain its status as the largest no-kill city in the country. Donated funds are used to treat serious injuries, provide dog houses and fencing  assistance, emergency response and basic pet and health care items for low-income pet owners etc.  To have the greatest impact, please give a recurring donation. To make a tax deductible gift click the DONATE button below.
+        Animal Services has numerous programs and partnerships designed to help pets in the shelter, in the community, and at home. Your donation will be used to provide these pets the extra attention and care they need and deserve.</Text>
+      </TextContainer>
     </PrincipalText>
   );
 }

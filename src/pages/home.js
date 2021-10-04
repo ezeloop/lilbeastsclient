@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 const Container = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   @media (max-width: 426px) {
   width: 100%;
   heigth: 100%
@@ -31,6 +31,7 @@ const PrincipalText = styled.div`
   
 @media (max-width: 426px) {
   background-color: #bfe9ff;
+  border-radius: 30px;
   color: black;
   margin: 0;
   font-size: 16px;
@@ -39,10 +40,12 @@ const PrincipalText = styled.div`
 
   @media (max-width: 900px) {
   background-color: #bfe9ff;
+  border-radius: 30px;
   color: black;
   margin: 0;
   font-size: 16px;
   padding: 0;
+  margin-bottom: 1rem;
   text-align: center;
   width: 90%;
   }
@@ -63,20 +66,27 @@ const PrincipalText = styled.div`
   padding: 6rem 9rem;
   }
 `
+const Title = styled.h1 `
+  background-color: #bfe9ff;
+  border-radius: 30px;
+
+`
 const ContainerSecondaryText = styled.div`
   width: 500px;
   background: transparent;
   text-align: justify;
   padding: 2rem;
-  color: white;
   font-family: 'Roboto', sans-serif;
   font-size: 1.5rem;
+  background-color: #bfe9ff;
+  border-radius: 30px;
+  color:black;
   @media (max-width: 426px) {
   background-color: #bfe9ff;
   color: black;
   margin: 0;
   font-size: 16px;
-  padding: 0;
+  padding: 0.5rem;
   width: 100%;
   heigth: 100%;
   }
@@ -120,7 +130,7 @@ const Home = () => {
         </div>
         : <div>
           <PrincipalText>
-            <h2>Adopt a Pet</h2>
+            <Title>Adopt a Pet</Title>
             <p>There are likely hundreds of adoptable cats and dogs </p>
             <p>in your local animal shelters or rescues right now who would love to join your family.</p>
           </PrincipalText>
