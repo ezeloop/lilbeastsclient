@@ -19,13 +19,13 @@ import {useDispatch, useSelector} from 'react-redux';
 import BasicAlerts from '../components/Alert';
 import styled from 'styled-components';
 
-const ContainerDiv = styled.div`
+const ContainerAll = styled.div`
   max-width: 500px;
-  height: 100vh;
+  height: 900px;
   background-color: white;
-  @media (min-width: 420px) {
-  padding: 0;
-  margin: 0;
+  
+  @media (max-width: 426px) {
+  max-height: 500px;
   }
   @media (min-width: 1440px) {
   margin: 0rem;
@@ -47,6 +47,7 @@ export default function SignIn() {
       password: Yup.string().required('Password can not be empty')
     }),
     onSubmit: values => {
+      setSubmit(true)
       dispatch(loginAction(values))
     }
   })
@@ -55,8 +56,8 @@ export default function SignIn() {
   const auth = useSelector((state) => state.auth.autenticated)
 
   return (
+    <ContainerAll>
     <ThemeProvider theme={theme}>
-    <ContainerDiv>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -67,10 +68,10 @@ export default function SignIn() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: '#334756' }}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
+          <Typography component="h1" color="#334756" variant="h5">
             Sign in
           </Typography>
           <Box component="form" onSubmit={formik.handleSubmit} noValidate sx={{ mt: 1 }}>
@@ -87,12 +88,7 @@ export default function SignIn() {
               autoComplete="email"
               autoFocus
             />
-            {formik.touched.identifier && formik.errors.identifier ? (
-              <div>
-                <p>Error</p>
-                <p>{formik.errors.identifier}</p>
-              </div>
-            ): null}
+           
             <TextField
               margin="normal"
               required
@@ -106,12 +102,7 @@ export default function SignIn() {
               id="password"
               autoComplete="current-password"
             />
-            {formik.touched.password && formik.errors.password ? (
-              <div>
-                <p>Error</p>
-                <p>{formik.errors.password}</p>
-              </div>
-            ): null}
+          
             {error ? <BasicAlerts severity={"error"} msg={error} /> : null}
             {auth ? <BasicAlerts severity={"success"} msg={"Login Success"} /> : null}
             <FormControlLabel
@@ -122,7 +113,8 @@ export default function SignIn() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2 , bgColor:"pink"}}
+              style={{backgroundColor: '#F0A500'}}
             >
               Sign In
             </Button>
@@ -141,7 +133,7 @@ export default function SignIn() {
           </Box>
         </Box>
       </Container>
-      </ContainerDiv>
     </ThemeProvider>
+    </ContainerAll>
   );
 }

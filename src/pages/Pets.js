@@ -4,15 +4,8 @@ import PetCard from '../components/Card';
 import { getAllPetsAction, getPetsPaginationAction } from '../redux/actions/pets';
 import {Pagination, Stack, Typography} from '@mui/material';
 import styled from 'styled-components';
+import { ContainerWithStyles } from '../styles/Container';
 
-const Container = styled.div`
-  width: 100vw;
-  height: 100%;
-  @media (max-width: 426px) {
-    width: 100%;
-    heigth: 100%;
-}
-`
 const PetsContainer = styled.div`
   display: inline-block;
   border-radius: 3px;
@@ -51,7 +44,7 @@ const Pets = () => {
   const loading = useSelector((state) => state.pets.loading)
 
   return (
-    <Container>
+    <ContainerWithStyles>
       {loading ?
         <div className="sk-container">
           <div className="sk-chase">
@@ -82,7 +75,7 @@ const Pets = () => {
             </Stack>
           </ContainerPagination>
         </div>}
-    </Container>
+    </ContainerWithStyles>
   );
 }
 

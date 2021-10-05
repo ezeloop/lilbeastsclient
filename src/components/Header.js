@@ -56,22 +56,22 @@ const Header = () => {
               </Typography>
               <ContainerLinks>
                 <Link to={'/'} >
-                  <Button variant="outlined" style={{ color: '#404969' }} startIcon={<HomeIcon />}>
+                  <Button variant="outlined" style={{ color: '#F0A500' }} startIcon={<HomeIcon />}>
                     Home
                   </Button>
                 </Link>
                 <Link to={'/pets'} >
-                  <Button variant="outlined" style={{ color: '#404969' }} startIcon={<FavoriteIcon />}>
+                  <Button variant="outlined" style={{ color: '#F0A500' }} startIcon={<FavoriteIcon />}>
                     Pets
                   </Button>
                 </Link>
                 <Link to={'/aboutus'} >
-                  <Button variant="outlined" style={{ color: '#404969' }} startIcon={<InfoIcon />}>
+                  <Button variant="outlined" style={{ color: '#F0A500' }} startIcon={<InfoIcon />}>
                     About us
                   </Button>
                 </Link>
                 <Link to={'/login'} >
-                  <Button variant="outlined" style={{ color: '#404969' }} startIcon={<LoginIcon />}>
+                  <Button variant="outlined" style={{ color: '#F0A500' }} startIcon={<LoginIcon />}>
                     {auth ? 'logout' : 'login'}
                   </Button>
                 </Link>

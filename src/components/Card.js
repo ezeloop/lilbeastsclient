@@ -17,12 +17,11 @@ const CardContainer = styled.div`
   background: transparent;
   color: white;
   border: 4px solid white;
-
-  @media (max-width: 420px) {
+  ${'' /* @media (max-width: 420px) {
   width: 200px;
   padding: 0;
 
-}
+} */}
 `
 
 export default function PetCard({ data }) {
@@ -62,7 +61,7 @@ export default function PetCard({ data }) {
 
   return (
     <CardContainer>
-      <Card sx={{ maxWidth: 345, maxHeight: 420 }}>
+      <Card sx={{ maxWidth: 345, maxHeight: 500 }}>
         <CardMedia
           component="img"
           height="140"
@@ -73,9 +72,13 @@ export default function PetCard({ data }) {
           <Typography gutterBottom variant="h5" component="div">
             {data.name}
           </Typography>
-          <p>{yearsOld}</p>
+          <Typography gutterBottom variant="h5" component="div">
+            {yearsOld}
+          </Typography>
           {sex ? <MaleIcon color="secondary" /> : <FemaleIcon style={{ color: 'pink' }} />}
-          <p>Veterinary: {data.veterinary.name}</p>
+          <Typography gutterBottom variant="h5" component="div">
+          Veterinary: {data.veterinary.name}
+          </Typography>
           <Typography variant="body2" color="text.secondary">
             {data.text}
           </Typography>

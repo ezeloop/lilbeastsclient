@@ -10,7 +10,8 @@ import store from './redux/store';
 import { Provider } from 'react-redux';
 import styled from 'styled-components'
 import SignIn from './pages/login';
-import background from './images/hero2.jpg'
+import background from './images/hero2.jpg';
+import { GlobalStyles } from './styles/GlobalStyles.style';
 
 const Container = styled.div`
   text-align: center;
@@ -47,10 +48,13 @@ function App() {
   const theme = createMuiTheme({
     palette: {
       primary: {
-        main: '#F5FEFF',
+        main: '#334756',
       },
       secondary: {
-        main: '#bfe9ff'
+        main: '#F0A500'
+      },
+      PrimaryDarker: {
+        main: '#082032'
       }
     }
   })
@@ -61,6 +65,7 @@ function App() {
         <Router>
           <Provider store={store}>
             <Header />
+            <GlobalStyles/>
             <ContainerImage style={{ backgroundImage: `url(${background})` }}>
               <Switch>
                 <Route exact path="/" component={Home} />
