@@ -47,7 +47,6 @@ export default function SignIn() {
       password: Yup.string().required('Password can not be empty')
     }),
     onSubmit: values => {
-      setSubmit(true)
       dispatch(loginAction(values))
     }
   })
